@@ -1,0 +1,68 @@
+// Place all the styles related to the dashBoard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*For show all page*/
+.see-detail-button{
+  color:black;
+  border: 1px solid black;
+  padding: 3px 3px;
+}
+
+.see-detail-button:hover{
+  color: white;
+  background-color: black;
+}
+
+/*For profile page*/
+.seperate-line{
+  border-bottom: 2px solid gray;
+}
+
+.profile-avatar{
+  width: 300px;
+  height: 300px;
+  margin-bottom: 5%;
+}
+
+.edit-button{
+  margin-bottom: 10px;
+}
+
+.profile-input{
+  border: None;
+  border-bottom: 2px solid #bfbfbf;
+  width: 150px;
+  height: 2rem;
+  margin-top:-10px;
+}
+
+.profile-input:hover{
+  animation: lightOn 2s linear infinite;
+}
+
+@keyframes lightOn{
+  0%,100% { border-bottom: 2px solid #bfbfbf; }
+  50% { border-bottom: 2px solid #ffd600;}
+}
+
+
+ul{
+  padding: 0;
+  width: 100%;
+  text-align: left;
+}
+
+li p{
+  display: inline-block;
+}
+
+li{
+  list-style: None;
+}
+
+h7{
+  color: grey;
+}
+

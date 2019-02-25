@@ -1,0 +1,96 @@
+<div class="row seperate-line" style="margin-top:3%; height:88px;">
+  <div class="col-md-4 offset-md-1" style="align-items:center;">
+    <h5 class="logo-border">CUCSAL</h5>
+  </div>
+  <div class="col-md-6" style="text-align:right;">
+    <a href="/dashBoard" class="nav-anchor logo-border show-all-nav">Home</a>
+    <a href="#" class="nav-anchor logo-border show-all-nav">Profile</a>
+    <a href="/logout" class="nav-anchor logo-border show-all-nav">Log out</a>
+  </div>
+
+</div>
+<div class="row" style="margin-top:5%;">
+  <div class="col-md-4 offset-md-1">
+    <div class="row" style="border-bottom:1px solid grey;"> 
+      <%= image_tag('anteater.png',class:'profile-avatar')%>
+    </div>
+    <div class="row" style="margin-top:5%">
+      <h7 >Contact information<br/><br/></h7>
+    </div>
+    <div class="row" style="margin-top:5%"> 
+      <ul>
+        <li><p>Email Address:&nbsp &nbsp</p><p class="ediButton" id="email" onclick="clickHandler(this)"><%=@memberView["email"]!=nil && @memberView["email"]!="" ? @memberView["email"] : "None"%><img src="https://img.icons8.com/material-outlined/30/000000/pencil.png"></p></li>
+        <li><p>LinkedIn link:&nbsp &nbsp</p><p class="ediButton" id="linkedIn" onclick="clickHandler(this)"><%=@memberView["linkedIn"]!=nil && @memberView["linkedIn"]!="" ? @memberView["linkedIn"] : "None"%><img src="https://img.icons8.com/material-outlined/30/000000/pencil.png"></p></li>
+        <li><p>Wechat     Id:&nbsp &nbsp</p><p class="ediButton" id="wechatId" onclick="clickHandler(this)"><%=@memberView["wechatId"]!=nil && @memberView["wechatId"]!="" ? @memberView["wechatId"] : "None"%><img src="https://img.icons8.com/material-outlined/30/000000/pencil.png"></p></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="col-md-5 offset-md-1" style="border-left:1px solid grey; padding-left:5%">
+    <div class="row" style="margin-top:5%">
+      <h7 >Personal information<br/><br/></h7>
+    </div>
+    <div class=row >
+      <ul>
+        <li><p>Chinese Name:&nbsp &nbsp</p><p class="ediButton" id="chineseName" onclick="clickHandler(this)"><%=@memberView["chineseName"]!=nil && @memberView["chineseName"]!="" ? @memberView["chineseName"] : "None"%><img src="https://img.icons8.com/material-outlined/30/000000/pencil.png"></p></li>
+        <li><p>English Name:&nbsp &nbsp</p><p class="ediButton" id="englishName" onclick="clickHandler(this)"><%=@memberView["englishName"]!=nil && @memberView["englishName"]!="" ? @memberView["englishName"] : "None"%><img src="https://img.icons8.com/material-outlined/30/000000/pencil.png"></p></li>
+        <li><p>Current Company:&nbsp &nbsp</p><p class="ediButton" id="currentCompany" onclick="clickHandler(this)"><%=@memberView["currentCompany"]!=nil && @memberView["currentCompany"]!="" ? @memberView["currentCompany"] : "None"%><img src="https://img.icons8.com/material-outlined/30/000000/pencil.png"></p></li>
+        <li><p>Graduate Year:&nbsp &nbsp</p><p class="ediButton" id="graduateYear" onclick="clickHandler(this)"><%=@memberView["graduateYear"]!=nil && @memberView["graduateYear"]!="" ? @memberView["graduateYear"] : "None"%><img src="https://img.icons8.com/material-outlined/30/000000/pencil.png"></p></li>
+        <li><p>Degree Level:&nbsp &nbsp</p><p class="ediButton" id="degree" onclick="clickHandler(this)"><%=@memberView["degree"]!=nil && @memberView["degree"]!="" ? @memberView["degree"] : "None"%><img src="https://img.icons8.com/material-outlined/30/000000/pencil.png"></p></li>
+        <li><p>Born Year:&nbsp &nbsp</p><p class="ediButton" id="bornYear" onclick="clickHandler(this)"><%=@memberView["bornYear"]!=nil && @memberView["bornYear"]!="" ? @memberView["bornYear"] : "None"%><img src="https://img.icons8.com/material-outlined/30/000000/pencil.png"></p></li>   <li>修改密码请联系管理员</li> 
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  
+  let subs = {}
+  
+  function clickHandler(obj){
+    let k = obj.id;
+    let content = obj.outerHTML;
+    let v = obj.innerText
+    let sta = content.indexOf(v)
+    let end = sta+v.length
+    let firstHalf = content.substr(0,sta)
+    let secondHalf = content.substr(end)
+    
+    subs[k] = [firstHalf,secondHalf,v]
+    $("#"+k).replaceWith("<input id='"+k+"'class='profile-input' type='text'>");
+  }
+    
+  $(document).on('keypress',function(e) {
+    if(e.which == 13) {
+      
+      let update = {} 
+      Object.keys(subs).forEach(k=>{
+        update[k] = $("#"+k).val()
+        let newVal = $("#"+k).val();
+      })
+      
+      $.ajax({
+        url:"/updateProfile",
+        type:"POST",
+        data:{update},
+        success:result=>{
+          Object.keys(subs).forEach(k=>{
+            $("#"+k).replaceWith(subs[k][0]+update[k]+subs[k][1])
+            
+            delete subs[k]
+          })
+          
+        },
+        error:result=>{
+          Object.keys(subs).forEach(k=>{
+            $("#"+k).replaceWith(subs[k][0]+subs[k][2]+subs[k][1])
+            delete subs[k]
+          })
+        }
+      });
+    }
+  });
+  
+
+
+</script>

@@ -1,0 +1,65 @@
+
+
+<div class="row nav-bar">
+  <div class="col-md-4 offset-md-1">
+    <h5 class="logo-border">CUCSAL</h5>
+  </div>
+  <div class="col-md-6" style="text-align:right;">
+    <a href="#" class="nav-anchor">Home</a>
+    <a href="/profile" class="nav-anchor">Profile</a>
+    <a href="/logout" class="nav-anchor">Log out</a>
+  </div>
+</div>
+<div class="row main-carousel">
+  <div class="col-md-4 offset-md-1">
+    <h2>To be or not to be</h2>
+    <h4>That is a question</h4>
+    <p>因为作者太懒所以本页大部分功能都没有实现，凑合着用吧各位。</p>
+    <br/>
+    <button onclick="showAll()" class="carousel-button">查看所有校友</button>
+  </div>
+  <div class="col-md-6">
+    <img src="/assets/anteater.png" width="50%" style="float:right;" class="my-rotation">
+  </div>
+</div>
+<div class="row" style="height:100px; padding-top:30px">
+  <div class="col-md-4 offset-md-4" style="text-align:center;">
+    <h4>Browse</h4>
+  </div>
+</div>
+<div class="row" style="height:500px; padding-top:20px;">
+  <div class="col-md-3 offset-md-1 left-margin-5">
+    <div class="card my-card-shadow">
+      <div class="card-body my-card" style="text-align:center;">
+        <%= image_tag('department.jpg',class:'card-img-top my-card-img')%>
+        <h4 style="color:#2b00e6;"><br/>Department</h4>
+        <a>Aca</a>
+        <a>Eve</a>
+        <a>Out</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 left-margin-5">
+    <div class="card-body my-card" style="text-align:center;">
+      <%= image_tag('graduate.jpg',class:'card-img-top my-card-img')%>
+      <h4 style="color:#2b00e6;"><br/>Graduate Years</h4>
+      <a>2018</a>
+      <a>2017</a>
+      <a>More..</a>
+    </div>
+  </div>
+  <div class="col-md-3 left-margin-5">
+    <div class="card-body my-card comming-soon"></div>    
+  </div>
+</div>
+<div class="row">
+  <div class="col" style="text-align:center">
+    <h5 class="foot-text" ><br/>@2018 CUCS</h5>
+  </div>
+</div>
+<script>
+  function showAll(){
+    location.href = "/showAll"
+  }
+</script>
+

@@ -1,0 +1,104 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+
+input:focus{
+  border: 1px solid #2b00e6;
+}
+
+.central-area{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: white;
+  padding: 0;
+  height: 600px;
+}
+
+.central-image{
+  height: 100%;
+  background: url(department.jpg) center center fixed;
+  background-size:50%;
+}
+
+.text-label{
+  color:#bfbfbf;
+}
+
+.input-box{
+  margin-top:3%;
+  width: 50%;
+  height: 45px;
+}
+
+
+.submit-button{
+  color:white;
+  background-color: yellow;
+  border: none;
+  border-bottom: 3px solid #ffd600;
+  border-radius: 5px;
+}
+
+.submit-button:hover{
+  background-color: #bfbfbf;
+  border-bottom: 3px solid gray;
+}
+
+
+.error-message{
+  color: #ffd600;
+  margin-top:5%;
+  height: 15px;
+}
+
+.attribute-input{
+  border: None;
+  border-bottom: 2px solid #bfbfbf;
+  width: 200px;  
+  margin-left: 25px;
+  margin-top: 6%;
+}
+
+.attribute-input:hover{
+  animation: lightOn 2s linear infinite;
+}
+
+#signInSection{
+  animation: slideToLeft 2s linear;
+}
+
+#submit{
+  background: rgba(0,0,0,0);
+  border: 2px solid black;
+  width: 100px;
+}
+
+#submit:hover{
+  background-color: black;
+  color:white !important;
+}
+
+.slideLeft{
+  animation: slideToLeft 2s linear;
+}
+
+
+
+@keyframes lightOn{
+  0%,100% { border-bottom: 2px solid #bfbfbf; }
+  50% { border-bottom: 2px solid #ffd600;}
+}
+
+@keyframes slideToLeft{
+  0% {opacity: 0; }
+  100% { opacity:1;}
+}
+
+
+
+
+

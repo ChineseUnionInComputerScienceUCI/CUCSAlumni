@@ -1,0 +1,51 @@
+<div class="row seperate-line" style="margin-top:3%; height:88px;">
+  <div class="col-md-4 offset-md-1" style="align-items:center;">
+    <h5 class="logo-border">CUCSAL</h5>
+  </div>
+  <div class="col-md-6" style="text-align:right;">
+    <a href="/dashBoard" class="nav-anchor logo-border show-all-nav">Home</a>
+    <a href="/profile" class="nav-anchor logo-border show-all-nav">Profile</a>
+    <a href="/logout" class="nav-anchor logo-border show-all-nav">Log out</a>
+  </div>
+
+</div>
+<div class="row" style="margin-top:5%;">
+  <div class="col-md-4 offset-md-1">
+    <div class="row" style="border-bottom:1px solid grey;"> 
+      <%= image_tag('anteater.png',class:'profile-avatar')%>
+    </div>
+    <div class="row" style="margin-top:5%">
+      <h7 >Contact information<br/><br/></h7>
+    </div>
+    <div class="row" style="margin-top:5%"> 
+      <ul>
+        <li><p>Email Address:&nbsp &nbsp</p><p class="ediButton" id="email" onclick="clickHandler(this)"><%=@memberView["email"]!=nil && @memberView["email"]!="" ? @memberView["email"] : "None"%></p></li>
+        <li><p>LinkedIn link:&nbsp &nbsp</p><p class="ediButton" id="linkedIn" onclick="clickHandler(this)"><%=@memberView["linkedIn"]!=nil && @memberView["linkedIn"]!="" ? @memberView["linkedIn"] : "None"%></p></li>
+        <li><p>Wechat     Id:&nbsp &nbsp</p><p class="ediButton" id="wechatId" onclick="clickHandler(this)"><%=@memberView["wechatId"]!=nil && @memberView["wechatId"]!="" ? @memberView["wechatId"] : "None"%></p></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="col-md-5 offset-md-1" style="border-left:1px solid grey; padding-left:5%">
+    <div class="row" style="margin-top:5%">
+      <h7 >Personal information<br/><br/></h7>
+    </div>
+    <div class=row >
+      <ul>
+        <li><p>Chinese Name:&nbsp &nbsp</p><p class="ediButton" id="chineseName" onclick="clickHandler(this)"><%=@memberView["chineseName"]!=nil && @memberView["chineseName"]!="" ? @memberView["chineseName"] : "None"%></p></li>
+        <li><p>English Name:&nbsp &nbsp</p><p class="ediButton" id="englishName" onclick="clickHandler(this)"><%=@memberView["englishName"]!=nil && @memberView["englishName"]!="" ? @memberView["englishName"] : "None"%></p></li>
+        <li><p>Current Company:&nbsp &nbsp</p><p class="ediButton" id="currentCompany" onclick="clickHandler(this)"><%=@memberView["currentCompany"]!=nil && @memberView["currentCompany"]!="" ? @memberView["currentCompany"] : "None"%></p></li>
+        <li><p>Graduate Year:&nbsp &nbsp</p><p class="ediButton" id="graduateYear" onclick="clickHandler(this)"><%=@memberView["graduateYear"]!=nil && @memberView["graduateYear"]!="" ? @memberView["graduateYear"] : "None"%></p></li>
+        <li><p>Degree Level:&nbsp &nbsp</p><p class="ediButton" id="degree" onclick="clickHandler(this)"><%=@memberView["degree"]!=nil && @memberView["degree"]!="" ? @memberView["degree"] : "None"%></p></li>
+        <li><p>Born Year:&nbsp &nbsp</p><p class="ediButton" id="bornYear" onclick="clickHandler(this)"><%=@memberView["bornYear"]!=nil && @memberView["bornYear"]!="" ? @memberView["bornYear"] : "None"%></p></li>    
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  
+  
+
+
+</script>

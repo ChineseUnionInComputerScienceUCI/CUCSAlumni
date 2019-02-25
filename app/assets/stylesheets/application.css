@@ -1,0 +1,159 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+a,u{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.logo-border{
+  border:2px solid black;
+  width: 28%;
+  text-align: center;
+}
+
+.top-buffer-50{
+  margin-top: 50px;
+}
+
+.nav-bar{
+  background-color:#ffd600;
+  height: 100px;
+  padding-top:30px;
+}
+
+.nav-anchor{
+  text-decoration: none;
+  color:#151413;
+  margin-left:50px; 
+}
+
+.nav-anchor-selected{
+  color:#2b00e6 !important;
+}
+
+.nav-logo{
+  color:#151413;
+}
+
+.main-carousel{
+  background-color:#ffd600;
+  height: 500px;
+  padding-top: 50px;
+}
+
+.carousel-button{
+  background-color:#2b00e6;
+  color: white;
+  width: 80%;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.my-rotation{
+  animation:spin 4s linear infinite;
+}
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+.left-margin-5{
+  left: 5%;
+}
+
+.my-card{
+  height:400px;
+  padding: 0;
+}
+
+.my-card p{
+  margin:0;
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+
+
+.my-card:hover{
+  box-shadow: 10px 10px 105px #888888;
+}
+
+.my-card-img{
+  max-height:200px; 
+}
+
+.my-card-shadow{
+  box-shadow: 10px 10px 105px #888888;
+}
+
+.comming-soon{
+  background: url(commingSoon.png);
+}
+
+.foot-text{
+  color:#bfbfbf;
+}
+
+/*For show all members page*/
+#searchBar{
+  border: None;
+  border-bottom: 2px solid #bfbfbf;
+  width: 100%;  
+}
+
+#searchBar:focus{
+  border-bottom: 2px solid #ffd600;
+}
+
+#searchBar:hover{
+  border-bottom: 2px solid #ffd600;
+  animation: lightOn 2s linear infinite;
+}
+
+.sign-up-form{
+  border: None;
+  border-bottom: 2px solid #bfbfbf;
+  width: 200px;  
+  margin-left: 25px;
+  margin-top: 6%;
+}
+
+.sign-up-form:hover{
+  animation: lightOn 2s linear infinite;
+}
+
+@keyframes lightOn{
+  0%,100% { border-bottom: 2px solid #bfbfbf; }
+  50% { border-bottom: 2px solid #ffd600;}
+}
+
+.show-all-nav:hover{
+  color: white;
+  background: black;
+}
+
+
+
+
+
+
