@@ -1,14 +1,5 @@
-  <div class="row" style="margin-top:3%;">
-    <div class="col-md-4 offset-md-1" style="align-items:center;">
-      <h5 class="logo-border">CUCSAL</h5>
-    </div>
-    <div class="col-md-6" style="text-align:right;">
-      <a href="/dashBoard" class="nav-anchor logo-border show-all-nav">Home</a>
-      <a href="/profile" class="nav-anchor logo-border show-all-nav">Profile</a>
-      <a href="/logout" class="nav-anchor logo-border show-all-nav">Log out</a>
-    </div>
-  </div>
-  <div class="row" style="align-items:center; margin-top:3%;">
+<%= render "shared/header"%>
+<div class="row" style="align-items:center; margin-top:3%;">
     <div class="col-md-4 offset-md-4">
       <input id="searchBar" type="text" placeHolder="search on names">
     </div>
@@ -42,3 +33,4 @@
     <% i+=1 %>      
     <% end %>
   </div>
+<%= render "shared/footer" %>

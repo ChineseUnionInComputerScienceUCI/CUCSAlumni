@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
-  get '/dashBoard' => 'dash_board#memberList'
+  get '/dashBoard' => 'dash_board#main'
   match '/login' => 'home#login', via: :post
   get '/showAll' => 'dash_board#showAll'
   get '/profile' => 'dash_board#profile'

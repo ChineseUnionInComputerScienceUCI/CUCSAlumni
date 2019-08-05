@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-t2 = Member.create('CUCSID':'141','chineseName':'王涛','englishName':'Tao','email':'taow8@uci.edu')
+#t2 = Member.create('CUCSID':'141','chineseName':'王涛','englishName':'Tao','email':'taow8@uci.edu')
 
-t3 = Member.create('CUCSID':'131','chineseName':'倪继亮','englishName':'Xavier','email':'taow8@uci.edu')
+#t3 = Member.create('CUCSID':'131','chineseName':'倪继亮','englishName':'Xavier','email':'taow8@uci.edu')
+
+t4 = Member.create('CUCSID':'999')

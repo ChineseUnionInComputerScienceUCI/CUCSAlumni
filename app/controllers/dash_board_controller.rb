@@ -1,11 +1,10 @@
 class DashBoardController < ApplicationController
   before_action :require_login
   
-  def memberList
+  def main
     @members = Member.all
   end
-
-  
+ 
   def showAll
     @members = Member.all
   end
