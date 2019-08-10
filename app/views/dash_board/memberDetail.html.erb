@@ -9,10 +9,10 @@
     </div>
     <div class="row"> 
       <ul class="info-list">
-        <li><a href="mailto:<%=@memberView["email"]%>">Email Address:&nbsp &nbsp<%=@memberView["email"]!=nil && @memberView["email"]!="" ? @memberView["email"] : "None"%></a></li>
+        <li>邮箱地址: &nbsp &nbsp<a href="mailto:<%=@memberView["email"]%>"><%=@memberView["email"]!=nil && @memberView["email"]!="" ? @memberView["email"] : "None"%></a></li>
         </br>
-        <li><a href="<%=@memberView["linkedIn"]%>">LinkedIn:&nbsp &nbsp</p><p class="ediButton" id="linkedIn" onclick="clickHandler(this)"><%=@memberView["linkedIn"]!=nil && @memberView["linkedIn"]!="" ? @memberView["linkedIn"] : "None"%></a></li>
-        </br><li><p>Wechat     Id:&nbsp &nbsp<%=@memberView["wechatId"]!=nil && @memberView["wechatId"]!="" ? @memberView["wechatId"] : "None"%></p></li>
+        <li>Linkedin: &nbsp &nbsp<a href="<%=@memberView["linkedIn"]%>"></p><p class="ediButton" id="linkedIn" onclick="clickHandler(this)"><%=@memberView["linkedIn"]!=nil && @memberView["linkedIn"]!="" ? @memberView["linkedIn"] : "None"%></a></li>
+        </br><li><p>微信     Id:&nbsp &nbsp<%=@memberView["wechatId"]!=nil && @memberView["wechatId"]!="" ? @memberView["wechatId"] : "None"%></p></li>
       </ul>
     </div>
   </div>
