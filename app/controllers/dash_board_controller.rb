@@ -1,3 +1,4 @@
+require "util.rb"
 class DashBoardController < ApplicationController
   before_action :require_login
   
@@ -42,12 +43,4 @@ class DashBoardController < ApplicationController
       @member.save
     end
   end
-
-  private 
-  def require_login
-    unless session[:logged_in] == true
-      redirect_to "/"
-    end
-  end
-  
 end

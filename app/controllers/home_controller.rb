@@ -1,8 +1,9 @@
 class HomeController < ApplicationController
   
   def index
-    
-    
+   if session[:logged_in]
+    return redirect_to("/dashBoard")
+   end   
   end
 
   def login
