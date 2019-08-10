@@ -1,16 +1,16 @@
 class HomeController < ApplicationController
   
-  $logged_in = false
-  $userId = nil
   def index
+    
+    
   end
 
   def login
      if Member.where(email:params[:uname]).first != nil
        member = Member.where(email:params[:uname]).first
        if member != nil && member.password == params[:pword]
-         $logged_in = true
-         $userId = member.id
+         session[:logged_in] = true
+         session[:user_id] = member.id
          return redirect_to("/dashBoard")
        else
          return render json: {:status => 1, :information => 'password wrong'}
@@ -20,7 +20,7 @@ class HomeController < ApplicationController
   end
   
   def logout
-    $logged_in = false
+    session[:logged_in] = false
     redirect_to "/"
   end
   

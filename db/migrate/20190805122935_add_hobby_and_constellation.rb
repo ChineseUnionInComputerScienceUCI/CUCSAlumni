@@ -1,4 +1,4 @@
-class CreateMembers < ActiveRecord::Migration[5.2]
+class AddHobbyAndConstellation < ActiveRecord::Migration[5.2]
   def change
     create_table :members do |t|
       t.string :chineseName
@@ -19,4 +19,5 @@ class CreateMembers < ActiveRecord::Migration[5.2]
       t.timestamps
     end
   end
+
 end

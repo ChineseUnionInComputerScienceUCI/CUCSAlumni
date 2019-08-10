@@ -1,0 +1,24 @@
+<%= render 'shared/header'%>
+ <% @data[:companyNames].each do |company|%>
+   <div class="row">
+    <div class='col-md-11 offset-md-1'>
+      <div class="row">
+        <h3 id="<%= company%>" class="company-title"><%= company%></h3>
+      </div>
+      <div class="row">      
+      <% @data[:members].each do |member|%>
+      <% if member.currentCompany == company%>
+        <a href="/memberDetail/<%=member.id%>">
+         <div class="memberCircle">
+           <%=member.chineseName%>
+         </div>
+        </a>
+      <% end%>
+      <% end %>
+      </div>
+    </div> 
+  </div>
+ <% end %>
+
+   
+<%= render 'shared/footer' %>

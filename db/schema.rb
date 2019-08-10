@@ -10,31 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_07_190147) do
-
-  create_table "cucsids", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2019_08_05_125914) do
 
   create_table "members", force: :cascade do |t|
     t.string "chineseName"
     t.string "englishName"
     t.string "email"
     t.string "wechatId"
-    t.string "userName"
     t.string "password"
     t.string "graduateYear"
     t.string "currentCompany"
     t.string "degree"
-    t.string "bornYear"
     t.string "image"
     t.string "linkedIn"
+    t.string "constellation"
+    t.string "hobby"
     t.string "CUCSID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["CUCSID"], name: "index_members_on_CUCSID", unique: true
-    t.index ["userName"], name: "index_members_on_userName", unique: true
   end
 
 end

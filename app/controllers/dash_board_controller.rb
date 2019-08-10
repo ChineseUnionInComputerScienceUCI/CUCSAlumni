@@ -2,15 +2,16 @@ class DashBoardController < ApplicationController
   before_action :require_login
   
   def main
-    @members = Member.all
+    @companys = Member.select(:currentCompany).distinct.where("currentCompany is not null")
+    
   end
  
   def showAll
-    @members = Member.all
+    @members = Member.where("currentCompany is not null")
   end
 
   def profile 
-    @member = Member.find($userId).attributes
+    @member = Member.find(session[:user_id]).attributes
     
     @memberView = Hash.new
     
@@ -35,7 +36,7 @@ class DashBoardController < ApplicationController
   end
   
   def updateProfile
-    @member = Member.find($userId)
+    @member = Member.find(session[:user_id])
     params[:update].each do |k,v|
       @member.update("#{k}":v)
       @member.save
@@ -44,7 +45,7 @@ class DashBoardController < ApplicationController
 
   private 
   def require_login
-    unless $logged_in == true
+    unless session[:logged_in] == true
       redirect_to "/"
     end
   end

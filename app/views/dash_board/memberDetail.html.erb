@@ -5,29 +5,31 @@
       <%= image_tag('anteater.png',class:'profile-avatar')%>
     </div>
     <div class="row" style="margin-top:5%">
-      <h7 >Contact information<br/><br/></h7>
+      <h5> 联系方式<br/><br/></h5>
     </div>
-    <div class="row" style="margin-top:5%"> 
-      <ul>
-        <li><p>Email Address:&nbsp &nbsp</p><p class="ediButton" id="email" onclick="clickHandler(this)"><%=@memberView["email"]!=nil && @memberView["email"]!="" ? @memberView["email"] : "None"%></p></li>
-        <li><p>LinkedIn link:&nbsp &nbsp</p><p class="ediButton" id="linkedIn" onclick="clickHandler(this)"><%=@memberView["linkedIn"]!=nil && @memberView["linkedIn"]!="" ? @memberView["linkedIn"] : "None"%></p></li>
-        <li><p>Wechat     Id:&nbsp &nbsp</p><p class="ediButton" id="wechatId" onclick="clickHandler(this)"><%=@memberView["wechatId"]!=nil && @memberView["wechatId"]!="" ? @memberView["wechatId"] : "None"%></p></li>
+    <div class="row"> 
+      <ul class="info-list">
+        <li><a href="mailto:<%=@memberView["email"]%>">Email Address:&nbsp &nbsp<%=@memberView["email"]!=nil && @memberView["email"]!="" ? @memberView["email"] : "None"%></a></li>
+        </br>
+        <li><a href="<%=@memberView["linkedIn"]%>">LinkedIn:&nbsp &nbsp</p><p class="ediButton" id="linkedIn" onclick="clickHandler(this)"><%=@memberView["linkedIn"]!=nil && @memberView["linkedIn"]!="" ? @memberView["linkedIn"] : "None"%></a></li>
+        </br><li><p>Wechat     Id:&nbsp &nbsp<%=@memberView["wechatId"]!=nil && @memberView["wechatId"]!="" ? @memberView["wechatId"] : "None"%></p></li>
       </ul>
     </div>
   </div>
   
   <div class="col-md-5 offset-md-1" style="border-left:1px solid grey; padding-left:5%">
     <div class="row" style="margin-top:5%">
-      <h7 >Personal information<br/><br/></h7>
+      <h5>个人信息<br/><br/></h5>
     </div>
-    <div class=row >
-      <ul>
-        <li><p>Chinese Name:&nbsp &nbsp</p><p class="ediButton" id="chineseName" onclick="clickHandler(this)"><%=@memberView["chineseName"]!=nil && @memberView["chineseName"]!="" ? @memberView["chineseName"] : "None"%></p></li>
-        <li><p>English Name:&nbsp &nbsp</p><p class="ediButton" id="englishName" onclick="clickHandler(this)"><%=@memberView["englishName"]!=nil && @memberView["englishName"]!="" ? @memberView["englishName"] : "None"%></p></li>
-        <li><p>Current Company:&nbsp &nbsp</p><p class="ediButton" id="currentCompany" onclick="clickHandler(this)"><%=@memberView["currentCompany"]!=nil && @memberView["currentCompany"]!="" ? @memberView["currentCompany"] : "None"%></p></li>
-        <li><p>Graduate Year:&nbsp &nbsp</p><p class="ediButton" id="graduateYear" onclick="clickHandler(this)"><%=@memberView["graduateYear"]!=nil && @memberView["graduateYear"]!="" ? @memberView["graduateYear"] : "None"%></p></li>
-        <li><p>Degree Level:&nbsp &nbsp</p><p class="ediButton" id="degree" onclick="clickHandler(this)"><%=@memberView["degree"]!=nil && @memberView["degree"]!="" ? @memberView["degree"] : "None"%></p></li>
-        <li><p>Born Year:&nbsp &nbsp</p><p class="ediButton" id="bornYear" onclick="clickHandler(this)"><%=@memberView["bornYear"]!=nil && @memberView["bornYear"]!="" ? @memberView["bornYear"] : "None"%></p></li>    
+    <div class="row" >
+      <ul class="info-list">
+        <li><p>中文名:&nbsp &nbsp</p><p class="ediButton" id="chineseName" onclick="clickHandler(this)"><%=@memberView["chineseName"]!=nil && @memberView["chineseName"]!="" ? @memberView["chineseName"] : "None"%></p></li></br>
+        <li><p>English Name:&nbsp &nbsp</p><p class="ediButton" id="englishName" onclick="clickHandler(this)"><%=@memberView["englishName"]!=nil && @memberView["englishName"]!="" ? @memberView["englishName"] : "None"%></p></li></br>
+        <li><p>现处公司:&nbsp &nbsp</p><a href="#"><%=@memberView["currentCompany"]!=nil && @memberView["currentCompany"]!="" ? @memberView["currentCompany"] : "None"%></a></li></br>
+        <li><p>毕业年份:&nbsp &nbsp</p><p class="ediButton" id="graduateYear" onclick="clickHandler(this)"><%=@memberView["graduateYear"]!=nil && @memberView["graduateYear"]!="" ? @memberView["graduateYear"] : "None"%></p></li>
+        </br><li><p>学历水平:&nbsp &nbsp</p><p class="ediButton" id="degree" onclick="clickHandler(this)"><%=@memberView["degree"]!=nil && @memberView["degree"]!="" ? @memberView["degree"] : "None"%></p></li>
+        </br><li><p>个人爱好:&nbsp &nbsp<%=@memberView["hobby"]!=nil && @memberView["hobby"]!="" ? @memberView["hobby"] : "None"%></p></li>
+        </br><li><p>星座:&nbsp &nbsp</p><%=@memberView["constellation"]!=nil && @memberView["constellation"]!="" ? @memberView["constellation"] : "None"%></p></li>
       </ul>
     </div>
   </div>

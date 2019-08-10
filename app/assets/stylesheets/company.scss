@@ -1,0 +1,42 @@
+// Place all the styles related to the company controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.company-title{
+  float:center;
+  margin-top:5%;
+}
+
+.memberCircle{
+    width: 99px;
+    height: 99px;
+    border-radius: 100%;
+    border:2px grey solid;
+    color: white;
+    padding-top: 35px;
+    font-family: roboto;
+    background-image: url("/assets/anteater.png");
+    background-size:cover;
+    background-position:center;
+    text-decoration: none;
+    margin:15px;
+}
+
+.memberCircle:hover{
+   animation:rotateInsideOut 2s infinite;
+}
+
+@keyframes rotateInsideOut{
+  0%{
+   transform: rotate3d(0, 1, 0, 0deg);
+  }
+  50%{
+   transform: rotate3d(0, 1, 0, 180deg);
+  }
+  100%{
+   transform: rotate3d(0, 1, 0, 0deg);
+  }
+}
+
+

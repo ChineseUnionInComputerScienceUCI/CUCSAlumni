@@ -11,4 +11,8 @@
 
 #t3 = Member.create('CUCSID':'131','chineseName':'倪继亮','englishName':'Xavier','email':'taow8@uci.edu')
 
-t4 = Member.create('CUCSID':'999')
+for i in 1 ..100 
+ 
+ Member.create('CUCSID':i)
+
+end

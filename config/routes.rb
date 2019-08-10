@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/updateProfile' => 'dash_board#updateProfile'
   post '/signUp' => 'home#createAccount'
   get '/logout'  => 'home#logout'
+  get '/company' => 'company#main'
   get '/memberDetail/:id' => 'dash_board#memberDetail'
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,11 +1,10 @@
 <%= render "shared/header"%>
 <div class="row main-carousel">
   <div class="col-md-4 offset-md-1">
-    <h2>To be or not to be</h2>
-    <h4>That is a question</h4>
-    <p>因为作者太懒所以本页大部分功能都没有实现，凑合着用吧各位。</p>
+    <h2>欢迎使用</h2>
+    <h4>CUCS校友系统</h4>
     <br/>
-    <button onclick="showAll()" class="carousel-button">查看所有校友</button>
+    <button onclick="showAll()" class="carousel-button">点我查看所有校友</button>
   </div>
   <div class="col-md-6">
     <img src="/assets/anteater.png" width="50%" style="float:right;" class="my-rotation">
@@ -21,10 +20,14 @@
     <div class="card my-card-shadow">
       <div class="card-body my-card" style="text-align:center;">
         <%= image_tag('department.jpg',class:'card-img-top my-card-img')%>
-        <h4 style="color:#2b00e6;"><br/>Department</h4>
-        <a>Aca</a>
-        <a>Eve</a>
-        <a>Out</a>
+        <h4 style="color:#2b00e6;"><br/>Companies</h4>
+        
+        <% @companys.each do |company|%>
+          <a class="company-link"href="/company/#<%=company.currentCompany%>"><%=company.currentCompany%></a>
+        <% end %>
+        </br>
+        </br>
+        <a style="color:#ddd" href="/company">More..</a>
       </div>
     </div>
   </div>

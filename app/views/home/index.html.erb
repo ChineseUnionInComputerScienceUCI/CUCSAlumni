@@ -25,19 +25,24 @@
         <a href="/" style="border-radius:100%;"><img src="https://img.icons8.com/ios/50/000000/left-filled.png"></a>
         
         <div id="signUpForm" class="row" style="margin-top:15%; padding-left:10%;">
-          <input id="chineseName" class="sign-up-form" type="text" placeHolder="chinese name">
-          <input id="englishName" class="sign-up-form" type="text" placeHolder="english name">
-          <input id="linkedIn" class="sign-up-form" type="text" placeHolder="linkedIn URL">
-          <input id="wechatId" class="sign-up-form" type="text" placeHolder="wechat Id">
-          <input id="currentCompany" class="sign-up-form" type="text" placeHolder="company">
-          <input id="bornYear" class="sign-up-form" type="text" placeHolder="born Year">
-          <input id="email" class="sign-up-form" type="email" placeHolder="email">
-          <input id="password" class="sign-up-form" type="password" placeHolder="password">
+          <input id="chineseName" class="sign-up-form" type="text" placeHolder="中文名">
+          <input id="englishName" class="sign-up-form" type="text" placeHolder="英文名">
+          <input id="linkedIn" class="sign-up-form" type="text" placeHolder="linkedin">
+          
+          <input id="wechatId" class="sign-up-form" type="text" placeHolder="微信id">
+          <input id="currentCompany" class="sign-up-form" type="text" placeHolder="所在公司">
+          <input id="degree" class="sign-up-form" type="text" placeHolder="最高学历">
+          <input id="graduateYear" class="sign-up-form" type="text" placeHolder="毕业年份">
+          <input id="email" class="sign-up-form" type="email" placeHolder="常用邮箱">
+          <input id="password" class="sign-up-form" type="password" placeHolder="密码">
           <input id="CUCSID" class="sign-up-form" type="text" placeHolder="CUCSID">
-        </div>  
+           <input id="hobby" class="sign-up-form" type="text" placeHolder="爱好">
+           <input id="constellation" class="sign-up-form" type="text" placeHolder="星座">
+       </div>  
         <div class="row">
           <div class="col-md-6 offset-md-3" style="margin-top:5%;">
-            <p id="signUpMSG">Note: all field need to be filled.</p>
+            <p>*邮箱将作为登陆用的用户名</p>
+            <p id="signUpMSG">Note: 所有空白都需填写.</p>
             <button onClick="signUp()" id="submit">submit</button>
           </div>
         </div>
@@ -111,7 +116,21 @@
         }
       })
     }
+  
+    companyList = ['amazon','google','facebook','linkedin','microsoft']
+     
+    $("#currentCompany").autocomplete({source:companyList});
     
+    yearList = []
+    for(var i=2013;i<2030;i++)
+    {
+      yearList.push( i.toString())
+    }    
+    
+    $("#graduateYear").autocomplete({source:yearList});
+
+    degreeList = ['high School','bachelor','master','phd','professor','post-doc','高中','本科','研究生','博士生','教授','硕士','博士后']  
+    $('#degree').autocomplete({source:degreeList}); 
     
   </script>
 </body>

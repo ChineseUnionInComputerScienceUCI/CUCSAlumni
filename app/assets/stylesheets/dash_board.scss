@@ -3,6 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+/*For main page*/
+.company-link{
+ margin-left:5px;
+ color:#ffd600;
+}
+
+@keyframes rainbowText{
+ 0%{ color:orange}
+ 50%{ color:yellow}
+ 100%{ color:indigo}
+}
+/*For member detail page*/
+.info-list li{
+  height:24px;
+}
+
 /*For show all page*/
 .see-detail-button{
   color:black;
@@ -65,4 +81,10 @@ li{
 h7{
   color: grey;
 }
+
+/*For header and footer*/
+#top-logo{
+ color:grey;
+}
+
 

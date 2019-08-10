@@ -154,6 +154,12 @@ a:hover{
   background: black;
 }
 
+/*For index page(sign in and sign up)*/
+.ui-menu{
+ max-width:200px;
+}
+
+
 
 
 
