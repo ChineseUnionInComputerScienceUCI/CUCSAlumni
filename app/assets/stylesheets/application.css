@@ -59,18 +59,41 @@ a:hover{
 }
 
 .main-carousel{
-  background-color:#ffd600;
+  background:linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size:400% 400%;  
   height: 500px;
   padding-top: 50px;
   border-bottom:2px gray solid;
+  animation: dynamicBackground 15s ease infinite;
+}
+
+@keyframes dynamicBackground{
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .carousel-button{
-  background-color:#2b00e6;
+  background-color:#ffd600;
   color: white;
   width: 80%;
   height: 50px;
+  border:none;
   border-radius: 5px;
+}
+
+.main-carousel h2{
+ color:#ffd600;
+}
+
+.main-carousel h4{
+ color:white;
 }
 
 .my-rotation{
