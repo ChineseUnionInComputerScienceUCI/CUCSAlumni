@@ -1,0 +1,53 @@
+<%= render "shared/header" %>
+
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <h3>输入你的邮箱地址</h3> 
+    <input id="email" type="text"></input>
+    </br>
+    </br>
+
+    <button class="simpleButton" id="submit" >Submit</button>
+    </br>
+    </br>
+
+    <h5 id="cucsId"></h5> <button style="opacity:0;" class="simpleButton" id="copyButton">一键复制</button>
+   
+    </div>
+</div>
+
+<%= render "shared/footer"%>
+<script> 
+$("#submit").click(function(event){
+   var emailInput = $("#email").val();
+  
+      $.ajax({
+        url:"/retrieveId",
+        type:"POST",
+        data:{
+          email:emailInput
+        },
+        success: result=>{
+          $('#cucsId').html(result.information);
+          $('#copyButton').css("opacity","1");
+        },
+        error: result=>{
+          $('#cucsId').html("服务器崩了");
+        }
+      })  
+
+});
+
+$("#copyButton").click(function(event){
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($("#cucsId").text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+
+  alert("复制成功");
+});
+
+
+</script>
+

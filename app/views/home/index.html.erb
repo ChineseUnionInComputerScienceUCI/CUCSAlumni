@@ -8,12 +8,12 @@
         <p class="text-label">Get connected by using our alumni system right now<br/></p>
         
         
-        <input id="u" class= "input-box" type="text" placeholder="username or email">
+        <input id="u" class= "input-box" type="text" placeholder="Email">
 
         <input id="p" class= "input-box" type="password" placeholder="password">
         
         <input id="submitButton" class="input-box submit-button" onclick="login()" type="submit">
-        <p>First time here? <span  onclick="showSignUp()" style="color:#ffd600;">sign up now!</span></p>
+        <p><br/>First time here? find you <a href="/retrieve" style="color:#ffd600">CUCS ID </a> and <span  onclick="showSignUp()" style="color:#ffd600;">sign up now!</span></p>
         <h5 class="error-message"></h5>
                 
         <p class="text-label" style="margin-top:10%;">All credit to CUCS 2018</p>
@@ -43,7 +43,7 @@
           <div class="col-md-6 offset-md-3" style="margin-top:5%;">
             <p>*邮箱将作为登陆用的用户名</p>
             <p id="signUpMSG">Note: 所有空白都需填写.</p>
-            <button onClick="signUp()" id="submit">submit</button>
+            <button onClick="signUp()" class="simpleButton" id="submit">submit</button>
           </div>
         </div>
       </div>
@@ -107,8 +107,8 @@
           if(result.status==4){
             $('#signUpSection').html("<h5 style='margin-top:35%;'>Success! You are all set!</br></h5><a href='/'>Back to Login<img src='https://img.icons8.com/ios/50/000000/left-filled.png'></a> ");
           }
-          else if(result.status==3){
-            $('#signUpMSG').html("<p>Invalid CUCS ID.</p>");
+          else{
+            $('#signUpMSG').html("<p>" +  result.information + "</p>");
           }
         },
         error: result=>{

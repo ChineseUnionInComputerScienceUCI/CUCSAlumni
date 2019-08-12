@@ -17,7 +17,7 @@ class HomeController < ApplicationController
          return render json: {:status => 1, :information => 'password wrong'}
        end
      end
-     render json: {:status => 2, :information => 'invalid username'}
+     render render json: {:status => 2, :information => 'invalid username'}
   end
   
   def logout
@@ -26,9 +26,16 @@ class HomeController < ApplicationController
   end
   
   def createAccount
-    if Member.where(CUCSID:params[:CUCSID]).first != nil
+    record = Member.where(CUCSID:params[:CUCSID]).first  
+    if record != nil
       @member = Member.find_by(CUCSID:params[:CUCSID])
-      
+      if record.email != nil
+        return render json:{:status=>5, :information=> '该ID已被注册'}
+      end 
+       
+      if Member.where(email:params[:email]).first != nil     
+        return render json:{:status=>6, :information=> '该邮箱已被注册'}
+      end   
       params.each do |k,v|
         if k != 'controller' && k!= 'action'
           @member.update("#{k}":v)
